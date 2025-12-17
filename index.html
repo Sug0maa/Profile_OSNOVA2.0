@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио — Алдияр Салыков</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #eaeaea;
+      line-height: 1.6;
+      min-height: 100vh;
+      background: #111;
+      position: relative;
+    }
+
+    /* ===== ФОН ВСЕГО САЙТА ===== */
+    .site-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .site-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* ===== ШАПКА ===== */
+    header {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 2;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 3;
+      padding-top: 90px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #cfcfcf;
+    }
+
+    /* ===== СЕКЦИИ ===== */
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      border-left: 4px solid #4a90e2;
+      padding-left: 12px;
+      margin-bottom: 18px;
+      font-weight: normal;
+    }
+
+    /* ===== КАРТОЧКИ ===== */
+    .card {
+      background: rgba(30,30,30,0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.85);
+    }
+
+    /* ===== НАВЫКИ ===== */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills span {
+      background: rgba(255,255,255,0.08);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .skills span:hover {
+      transform: translateY(-3px);
+      background: rgba(74,144,226,0.25);
+    }
+
+    /* ===== КНОПКИ ===== */
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 10px;
+      padding: 9px 20px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #4a90e2, #357abd);
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(74,144,226,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(74,144,226,0.6);
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #aaa;
+    }
+
+    /* ===== ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 260px;
+      }
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Фон сайта -->
+  <img class="site-bg"
+    src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb284ZHFmNGRla2R5YXNydWpiazFyNjVyYzdodWd0ZTU3bnVqMHM3MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lLYkwhcrVfpmg/giphy.gif">
+  <div class="site-overlay"></div>
+
+  <!-- Шапка -->
+  <header>
+    <img class="header-bg"
+      src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGU2Y3Z2aHE0MXR3MXA5MWlydXJkb2xyd2xiZXE2Y2pqMmY0MHdnNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftYbYxLSsBgkcqN8OE/giphy.gif">
+    <div class="header-overlay"></div>
+
+    <div class="header-content">
+      <h1>Салыков Алдияр</h1>
+      <p>Python / Web разработчик</p>
+    </div>
+  </header>
+
+  <section class="reveal">
+    <h2>Обо мне</h2>
+    <div class="card">
+      Начинающий разработчик. Делаю сайты и Python-приложения. Люблю тёмный стиль и аккуратный код.
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Навыки</h2>
+    <div class="card skills">
+      <span>Python</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>aiogram</span>
+      <span>Git</span>
+      <span>JavaScript (база)</span>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Проекты</h2>
+
+    <div class="card">
+      <h3>Редактор фото</h3>
+      <p>Мини-редактор изображений на Python.</p>
+      <a class="btn" href="#">GitHub</a>
+      <a class="btn" href="#">Demo</a>
+    </div>
+
+    <div class="card">
+      <h3>Telegram-бот</h3>
+      <p>Бот на Python (aiogram).</p>
+      <a class="btn" href="#">GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>Мини-опрос</h3>
+      <p>Оконное приложение на Python.</p>
+      <a class="btn" href="#">GitHub</a>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Контакты</h2>
+    <div class="card">
+      <p>Email: example@gmail.com</p>
+      <p>GitHub: github.com/username</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Алдияр Салыков
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const h = window.innerHeight;
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < h - 100) {
+          el.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
